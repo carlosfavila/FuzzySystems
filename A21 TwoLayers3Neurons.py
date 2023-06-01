@@ -47,7 +47,7 @@ b13=-np.dot(w13,[3,2])
 
 W1=[w11,w12,w13]
 B1=[[b11],[b12],[b13]]
-
+print(B1)
 W2=[1,1,1] # both neurons have the same weight for the second layer
 
 #W*P+b>=0 MINIMUM CONDITION TO GET '1'
