@@ -1,0 +1,50 @@
+[System]
+Name='MAMDANIFUZZ'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Generator'
+Range=[0 359]
+NumMFs=5
+MF1='NE':'trapmf',[0 0 10 80]
+MF2='N':'trapmf',[10 80 100 170]
+MF3='W':'trapmf',[100 170 190 260]
+MF4='S':'trapmf',[190 260 280 350]
+MF5='SE':'trapmf',[280 350 359 359]
+
+[Input2]
+Name='Flag'
+Range=[0 359]
+NumMFs=5
+MF1='NE':'trapmf',[0 0 10 80]
+MF2='N':'trapmf',[10 80 100 170]
+MF3='W':'trapmf',[100 170 190 260]
+MF4='S':'trapmf',[190 260 280 350]
+MF5='SE':'trapmf',[280 350 359 359]
+
+[Output1]
+Name='Speed'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'trapmf',[-0.108342361863487 -0.108342361863487 9.89165763813651 34.8916576381365]
+MF2='Medium':'trapmf',[15 40 60 85]
+MF3='High':'trapmf',[65 90 100 100]
+
+[Output2]
+Name='Direction'
+Range=[0 5]
+NumMFs=3
+MF1='CW':'trimf',[0 0 2.4]
+MF2='DM':'trimf',[2.3 2.5 2.7]
+MF3='ACW':'trimf',[2.6 5 5]
+
+[Rules]

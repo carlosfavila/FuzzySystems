@@ -1,0 +1,39 @@
+[System]
+Name='A11b'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=5
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Error'
+Range=[-20 20]
+NumMFs=5
+MF1='NegativeBig':'sigmf',[-0.5 -10]
+MF2='NegativeSmall':'gbellmf',[2.5 1 -7.5]
+MF3='Center':'gbellmf',[5 1 0]
+MF4='PositiveSmall':'gbellmf',[2.5 1 7.5]
+MF5='PositiveBig':'sigmf',[0.5 10]
+
+[Output1]
+Name='Voltage'
+Range=[-12 12]
+NumMFs=5
+MF1='f3':'linear',[0.4 0]
+MF2='f4':'linear',[2 -8]
+MF3='f5':'constant',[12]
+MF4='f1':'constant',[-12]
+MF5='f2':'linear',[2 8]
+
+[Rules]
+1, 4 (1) : 2
+2, 5 (1) : 2
+3, 1 (1) : 2
+4, 2 (1) : 2
+5, 3 (1) : 2
